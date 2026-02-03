@@ -32,6 +32,7 @@ RUN pnpm ui:build
 ENV NODE_ENV=production
 
 RUN mkdir -p /home/node/.openclaw && chown -R node:node /home/node/.openclaw
+RUN apt-get update && apt-get install nano
 
 # Security hardening: Run as non-root user
 # The node:22-bookworm image includes a 'node' user (uid 1000)
